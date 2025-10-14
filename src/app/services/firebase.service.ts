@@ -1,25 +1,33 @@
-import { Component } from '@angular/core';
-import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from '@angular/fire/auth';
-import { addDoc, collection, Firestore, getDocs } from '@angular/fire/firestore';
+import { Injectable } from '@angular/core';
+import {
+  Auth,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  signOut,
+} from '@angular/fire/auth';
+import {
+  addDoc,
+  collection,
+  Firestore,
+  getDocs,
+} from '@angular/fire/firestore';
+import { environment } from '../../../environment';
 
-@Component({
-  selector: 'app-firebase',
-  imports: [],
-  templateUrl: './firebase.html',
-  styleUrl: './firebase.css'
+@Injectable({
+  providedIn: 'root',
 })
-export class Firebase {
+export class FirebaseService {
   constructor(private auth: Auth, private firestore: Firestore) {}
 
-  async login (email: string, password: string) {
+  async login(email: string, password: string) {
     return await signInWithEmailAndPassword(this.auth, email, password);
   }
 
-  async register (email: string, password: string) {
+  async register(email: string, password: string) {
     return await createUserWithEmailAndPassword(this.auth, email, password);
   }
 
-  async logout () {
+  async logout() {
     return await signOut(this.auth);
   }
 
@@ -31,6 +39,6 @@ export class Firebase {
   async getDocuments(collectionName: string) {
     const colRef = collection(this.firestore, collectionName);
     const snapshot = await getDocs(colRef);
-    return snapshot.docs.map(doc => doc.data);
+    return snapshot.docs.map((doc) => doc.data);
   }
 }
