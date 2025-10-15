@@ -11,7 +11,6 @@ import {
   Firestore,
   getDocs,
 } from '@angular/fire/firestore';
-import { environment } from '../../../environment';
 
 @Injectable({
   providedIn: 'root',

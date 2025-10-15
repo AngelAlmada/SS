@@ -1,0 +1,30 @@
+<h1>Pantalla de pruebas para firebase</h1>
+
+<hr>
+
+<section>
+  <h3>Titulo: {{nameCatalog()}} </h3>
+  <input
+  type="text"
+  class="form-control"
+  placeholder="Nombre del catalogo"
+  [value] = "nameCatalog()"
+  (change) = "nameCatalog.set(txtName.value)"
+  (input)= "nameCatalog.set(txtName.value)"
+  #txtName
+  >
+
+  <h3>Contenido: {{contentCatalog()}} </h3>
+  <input
+  type="text"
+  class="form-control"
+  placeholder="Nombre del catalogo"
+  [value] = "contentCatalog()"
+  (change) = "contentCatalog.set(txtContent.value)"
+  (input)= "contentCatalog.set(txtContent.value)"
+  #txtContent
+  >
+
+
+  <button (click)="addData()">Agregar Registro</button>
+</section>
