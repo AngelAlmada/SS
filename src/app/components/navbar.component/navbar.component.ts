@@ -16,12 +16,12 @@ interface NavItem {
 export class NavbarComponent {
   navItems: NavItem[] = [
     {
-      label: 'Inicio', iconPath: 'iconsnavbar/home.svg', route: '/login'
+      label: 'Inicio', iconPath: 'iconsnavbar/home.svg', route: '/'
     },
     {
-      label: 'Cursos', iconPath: 'iconsnavbar/curso.svg', route: '/testfirebase'
+      label: 'Cursos', iconPath: 'iconsnavbar/curso.svg', route: '/cursos'
     },{
-      label: 'Inicio', iconPath: 'iconsnavbar/person.svg', route: '/user'
+      label: 'Inicio', iconPath: 'iconsnavbar/person.svg', route: '/usuario'
     },
   ]
 }
