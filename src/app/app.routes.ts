@@ -4,6 +4,7 @@ import { Routes } from '@angular/router';
 import { Login } from './components/login/login';
 import { TestGenerateRegisterComponent } from './components/test-generate-register.component/test-generate-register.component';
 import { Inicio } from './pages/inicio/inicio';
+import { Listacursos } from './components/listacursos/listacursos';
 
 export const routes: Routes = [
   {
@@ -24,5 +25,9 @@ export const routes: Routes = [
   {
     path: 'testfirebase',
     component: TestGenerateRegisterComponent,
+  },
+  {
+    path: 'lista',
+    component: Listacursos,
   },
 ];

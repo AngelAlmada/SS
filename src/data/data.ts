@@ -7,9 +7,9 @@ interface Curso {
 }
 
 // 2. Crear un array con varios cursos
-const cursos: Curso[] = [
+export const cursos: Curso[] = [
   {
-    titulo: "Introducción a TypeScript",
+    titulo: "Introducción a las IAs",
     descripcion: "Aprende los fundamentos del lenguaje TypeScript y cómo usarlo con proyectos de JavaScript.",
     fecha: "2025-11-05",
     subcursos: [
@@ -18,7 +18,7 @@ const cursos: Curso[] = [
       "Genéricos",
       "Configuración del compilador"
     ],
-    imagenPath: "/images/ts-course.jpg"
+    imagenPath: "images/ia.png"
   },
   {
     titulo: "Desarrollo Web con React",
@@ -30,7 +30,7 @@ const cursos: Curso[] = [
       "Routing con React Router",
       "Integración con APIs"
     ],
-    imagenPath: "/images/react-course.jpg"
+    imagenPath: "images/excel.jpg"
   }
 ];
 
