@@ -1,0 +1,19 @@
+<div class="navbar">
+  <!-- <img class="logofim" src="images/logouas.jpeg" alt=""> -->
+
+  <nav class="sidebar-nav">
+
+    @for (item of navItems; track item) {
+    <li [routerLink]="item.route" routeLinkActive="active">
+      <img
+        [src]="item.iconPath"
+        [alt]="item.label"
+        width="20"
+        height="20"
+        class="iconHome"
+      />
+      <span class="icon-label">{{ item.label }}</span>
+    </li>
+    }
+  </nav>
+</div>

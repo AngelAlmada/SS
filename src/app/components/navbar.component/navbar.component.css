@@ -1,0 +1,136 @@
+.navbar {
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #182940;
+  color: white;
+  justify-content: flex-start;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.sidebar-nav {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+.sidebar-nav li img {
+  filter: invert(1);
+  /* cambia a blanco si el SVG es negro */
+}
+
+.iconHome {
+  fill: #3498db;
+  transform: scale(1.1);
+}
+
+.icon-label {
+  display: none;
+  /* oculto por defecto en móvil */
+  margin-left: 10px;
+  /* espacio entre icono y texto */
+  white-space: nowrap;
+  /* evita que el texto se rompa */
+}
+
+li {
+  list-style: none;
+}
+
+.sidebar-nav li img,
+.sidebar-nav li svg {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Al pasar el mouse */
+.sidebar-nav li:hover img,
+.sidebar-nav li:hover svg {
+  transform: scale(1.2);
+  /* aumenta tamaño */
+  filter: invert(0.8);
+  /* ejemplo: cambio de color */
+}
+
+.logofim {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar {
+    display: flex;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    /* vertical */
+    width: 10%;
+    /* ancho del sidebar */
+    height: 100vh;
+    /* altura completa */
+    top: 0;
+    left: 0;
+    justify-content: flex-start;
+    /* empieza desde arriba */
+    align-items: center;
+    /* centra horizontalmente */
+    box-sizing: border-box;
+    gap : 2rem;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    /* íconos verticales */
+    gap: 1.5rem;
+    justify-content: flex-start;
+    /* empieza desde arriba */
+    align-items: flex-start;
+    /* centra los li horizontalmente */
+    padding: 0;
+    margin: 0;
+  }
+
+
+  .sidebar-nav li {
+    display: flex;
+    color: black;
+    align-items: center;
+    /* alinea icono y texto verticalmente */
+    gap: 10px;
+    /* espacio entre icono y label */
+    cursor: pointer;
+    background-color: #E4E7ED;
+    padding: 1rem;
+    max-width: 90px;
+    min-width: 90px;
+    border-radius: 10px;
+  }
+
+
+  .icon-label {
+    display: inline;
+    /* ahora se ve */
+  }
+
+  .logofim {
+    display: inline;
+    max-width: 100%;
+    /* nunca será más grande que su contenedor */
+    width: 80px;
+    /* tamaño base */
+    height: auto;
+    border-radius: 50px;
+  }
+
+  .sidebar-nav li img {
+  filter: invert(0);
+  /* cambia a blanco si el SVG es negro */
+}
+
+
+}
