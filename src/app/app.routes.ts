@@ -5,6 +5,7 @@ import { Login } from './components/login/login';
 import { TestGenerateRegisterComponent } from './components/test-generate-register.component/test-generate-register.component';
 import { Inicio } from './pages/inicio/inicio';
 import { Listacursos } from './components/listacursos/listacursos';
+import { Registro } from './components/registro/registro';
 
 export const routes: Routes = [
   {
@@ -29,5 +30,9 @@ export const routes: Routes = [
   {
     path: 'lista',
     component: Listacursos,
+  },
+  {
+    path: 'registro',
+    component: Registro,
   },
 ];
