@@ -1,0 +1,42 @@
+.wrapper {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #E4E7ED;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.container-cards {
+    border: 2px solid;
+    width: 12%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.info h2 {
+    margin: 0;
+    margin-bottom: 3px;
+}
+
+.info p {
+    margin: 0;
+}
+
+button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.container img {
+    width: 40%;
+    margin-bottom: 15px;
+}
