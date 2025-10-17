@@ -21,7 +21,7 @@ export class NavbarComponent {
     {
       label: 'Cursos', iconPath: 'iconsnavbar/curso.svg', route: '/cursos'
     },{
-      label: 'Inicio', iconPath: 'iconsnavbar/person.svg', route: '/usuario'
+      label: 'Mi Perfil', iconPath: 'iconsnavbar/person.svg', route: '/usuario '
     },
   ]
 }

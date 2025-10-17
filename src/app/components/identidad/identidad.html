@@ -1,0 +1,9 @@
+<div>
+  <button (click)="handleClick()">
+    {{ user ? user.displayName : 'Inicia tu Sesión' }}
+  </button>
+
+  @if (user) {
+    <button (click)="logout()" >Cerrar sesión</button>
+  }
+</div>

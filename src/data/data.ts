@@ -1,10 +1,4 @@
-interface Curso {
-  titulo: string;
-  descripcion: string;
-  fecha: string; // o Date si quieres manejar objetos de fecha
-  subcursos: string[]; // lista de temas o módulos
-  imagenPath: string;  // ruta o URL de la imagen
-}
+import { Curso } from "../interfaces/data.interfas";
 
 // 2. Crear un array con varios cursos
 export const cursos: Curso[] = [
@@ -21,8 +15,8 @@ export const cursos: Curso[] = [
     imagenPath: "images/ia.png"
   },
   {
-    titulo: "Desarrollo Web con React",
-    descripcion: "Construye aplicaciones modernas usando React, Hooks y componentes funcionales.",
+    titulo: "Introducción a Excel",
+    descripcion: "Domina las funciones y herramientas esenciales de Excel para análisis de datos y gestión de hojas de cálculo.",
     fecha: "2025-12-01",
     subcursos: [
       "Componentes y props",
