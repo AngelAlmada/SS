@@ -1,0 +1,169 @@
+/* ===================================== */
+/* 🌙 BASE (Móvil - Barra Inferior) 📱 */
+/* ===================================== */
+.navbar {
+  display: flex;
+  font-family: 'Poppins', sans-serif;
+  background-color: #182940;
+  color: white;
+  justify-content: center;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-nav {
+  display: flex;
+  gap: 0;
+  justify-content: space-around;
+  padding: 0.75rem 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+  /* El li debe ser flexible para centrar el icono, aunque el label esté oculto */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 🖼️ Estilos de Íconos */
+.sidebar-nav li img {
+  /* Íconos más grandes para móvil (28px) */
+  width: 28px;
+  height: 28px;
+  filter: invert(1);
+  transition: transform 0.3s ease;
+}
+
+.iconHome {
+  margin-bottom: 0; /* Ya no necesitamos margen si el texto está oculto */
+}
+
+.icon-label {
+  /* OCULTAR EN PANTALLAS CHICAS */
+  display: none;
+  /* Los estilos de fuente ya no son relevantes si está oculto, pero los dejo por consistencia */
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-left: 0;
+}
+
+/* 💡 Estados Interactivos (Móvil) */
+.sidebar-nav li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav li:hover img {
+  transform: scale(1.1);
+  filter: invert(0.8);
+}
+
+/* 🎯 Estado Activo */
+.sidebar-nav li.active {
+  color: #55c2da;
+}
+
+.sidebar-nav li.active img {
+  filter: invert(70%) sepia(50%) saturate(2000%) hue-rotate(150deg);
+  transform: scale(1.15);
+}
+
+.logofim {
+  display: none;
+}
+
+/* ===================================== */
+/* 🖥️ ESCRITORIO (Sidebar Lateral) 💻 */
+/* ===================================== */
+@media screen and (min-width: 1024px) {
+  .navbar {
+    padding: 1.5rem 0.5rem;
+    flex-direction: column;
+    width: 250px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+    background-color: #182940;
+  }
+
+  .sidebar-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .sidebar-nav li {
+    /* Cambiamos la dirección de flex para mostrar ícono y texto */
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin: 0 0.5rem;
+    width: auto;
+    color: white;
+  }
+
+  .sidebar-nav li img {
+    /* Iconos más grandes para escritorio (24px) */
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
+  }
+
+  .icon-label {
+    /* MOSTRAR EN PANTALLAS GRANDES */
+    display: inline;
+    margin-left: 15px;
+    font-size: 1rem;
+  }
+
+  /* 💡 Estados Interactivos (Escritorio) */
+  .sidebar-nav li:hover {
+    background-color: #273b53;
+    transform: translateX(5px);
+  }
+
+  .sidebar-nav li:hover img {
+    transform: none;
+  }
+
+  /* 🎯 Estado Activo (Escritorio) */
+  .sidebar-nav li.active {
+    background-color: #55c2da;
+    color: #182940;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .sidebar-nav li.active img {
+    filter: invert(20%) sepia(10%) saturate(7000%) hue-rotate(180deg);
+    transform: none;
+  }
+
+  /* 🖼️ Logo */
+  .logofim {
+    display: block;
+    max-width: 100%;
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 2.5rem;
+    border: 3px solid #55c2da;
+  }
+}

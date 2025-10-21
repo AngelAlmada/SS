@@ -1,0 +1,70 @@
+li {
+  width: 100%;
+  /* ocupa todo el ancho del contenedor */
+  display: flex;
+  flex-direction: row;
+  /* horizontal */
+  align-items: center;
+  /* centra verticalmente */
+  justify-content: space-between;
+  /* espacio entre elementos */
+  margin-top: 1rem;
+  background-color: #FEFEFF;
+  padding: 1rem;
+  /* espacio interno */
+  box-sizing: border-box;
+  /* incluye padding en el ancho */
+  border-radius: 8px;
+  /* opcional: bordes redondeados */
+  gap: 1rem;
+  /* espacio entre elementos */
+}
+
+img {
+  width: 50px;
+  height: auto;
+  flex-shrink: 0;
+  /* no se encoge */
+}
+
+.descripcion {
+  flex: 1;
+  /* ocupa el espacio restante */
+  color: #555;
+}
+
+button {
+  background-color: #0597F2;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  flex-shrink: 0;
+  /* no se encoge */
+}
+
+.descripcion {
+  flex: 1;
+  color: #555;
+  font-size: 0.8rem;
+  /* tamaño más pequeño */
+  line-height: 1.2;
+  /* opcional: ajusta la altura de línea */
+}
+
+li h2 {
+  font-size: 0.9rem;
+  /* título más pequeño */
+  margin: 0;
+  /* quitar márgenes extra */
+}
+
+li p {
+  font-size: 0.75rem;
+  /* párrafo más pequeño */
+  margin: 0;
+  color: #555;
+}
