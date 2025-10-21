@@ -1,0 +1,20 @@
+<article class="curso-card">
+  <div class="curso-icono-container">
+    <i class="curso-icono" [ngClass]="icono"></i>
+  </div>
+
+  <div class="curso-info-container">
+    <div class="curso-contenido">
+      <h3 class="curso-titulo">{{ titulo }}</h3>
+      <p class="curso-descripcion">{{ contenido }}</p>
+      <div class="curso-fecha">
+        <i class="fa-solid fa-calendar-alt"></i> <span>{{ fechaCurso }}</span>
+      </div>
+    </div>
+    <div class="curso-accion">
+      <button class="curso-boton" (click)="solicitarCurso()">
+        Ver detalles
+      </button>
+    </div>
+  </div>
+</article>
