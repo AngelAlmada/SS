@@ -1,0 +1,65 @@
+<body>
+  <div>
+    <h1>Registro</h1>
+    <form (submit)="validate($event)">
+      <label for="nombre">Ingresa tu nombre</label>
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        placeholder="Juan Manuel López Castro"
+        [value]="user()"
+        (change)="user.set(txtUser.value)"
+        (input)="user.set(txtUser.value)"
+        required
+        #txtUser
+      />
+      <label for="email">Ingresa tu Correo</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="ejemplo@gmail.com"
+        [value]="email()"
+        (change)="email.set(txtEmail.value)"
+        (input)="email.set(txtEmail.value)"
+        required
+        #txtEmail
+      />
+      <label for="fecha">Fecha de nacimiento</label>
+      <input
+        type="date"
+        name="fecha"
+        id="fecha"
+        [value]="date()"
+        (change)="date.set(txtDate.value)"
+        (input)="date.set(txtDate.value)"
+        required
+        #txtDate
+      />
+      <label for="password">Contraseña:</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        [value]="password()"
+        (change)="password.set(txtPassword.value)"
+        (input)="password.set(txtPassword.value)"
+        required
+        #txtPassword
+      />
+      <label for="password">Confirma contraseña:</label>
+      <input
+        type="password"
+        name="cpassword"
+        id="cpassword"
+        [value]="confirmPassword()"
+        (change)="confirmPassword.set(txtCPassword.value)"
+        (input)="confirmPassword.set(txtCPassword.value)"
+        required
+        #txtCPassword
+      />
+      <button type="submit">Registrar</button>
+    </form>
+  </div>
+</body>

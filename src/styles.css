@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: Montserrat;
+  src: url(../public/fonts/Montserrat-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --font-principal: 'Montserrat', sans-serif;
+}
+
+
+body {
+  font-family: var(--font-principal);
+  background-color: #E4E7ED;
+}
