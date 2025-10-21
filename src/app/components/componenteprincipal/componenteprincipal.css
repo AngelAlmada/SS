@@ -1,0 +1,108 @@
+/* Estilo base para el contenedor del componente */
+:host {
+  display: block;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.curso-card {
+  display: flex;
+  /* Por defecto, la tarjeta es vertical (ideal para móviles) */
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 16px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  overflow: hidden; /* Asegura que los bordes redondeados se apliquen a los hijos */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 400px; /* Ancho máximo para la vista móvil */
+  margin: 2rem auto; /* Centrado en la página */
+}
+
+.curso-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor del ícono principal */
+.curso-icono-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4f46e5; /* Un color primario moderno (índigo) */
+  color: #fff;
+  padding: 3rem 1.5rem;
+}
+
+.curso-icono {
+  font-size: 4.5rem;
+}
+
+/* Contenedor para toda la información textual y el botón */
+.curso-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Empuja el botón hacia abajo */
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.curso-titulo {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.curso-descripcion {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.curso-fecha {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #4f46e5;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+/* Botón de acción */
+.curso-boton {
+  width: 100%;
+  background-color: #10b981; /* Verde esmeralda para la acción */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.curso-boton:hover {
+  background-color: #059669; /* Un verde más oscuro al pasar el cursor */
+}
+
+
+/* --- RESPONSIVIDAD --- */
+/* A partir de 768px (tablets y escritorio), cambiamos a un diseño horizontal */
+@media (min-width: 768px) {
+  .curso-card {
+    flex-direction: row; /* Diseño horizontal */
+    max-width: 750px; /* Ancho máximo para la vista de escritorio */
+    min-height: 280px;
+  }
+
+  .curso-icono-container {
+    min-width: 250px;
+    padding: 2rem;
+  }
+
+  .curso-info-container {
+    padding: 2rem;
+  }
+}
