@@ -4,7 +4,7 @@ import { Curso } from "../interfaces/data.interfas";
 export const cursos: Curso[] = [
   {
     titulo: "Introducción a las IAs",
-    descripcion: "Aprende los fundamentos del lenguaje TypeScript y cómo usarlo con proyectos de JavaScript.",
+    descripcion: "Aprende los conceptos básicos de la inteligencia artificial, sus aplicaciones y cómo está transformando diversas industrias.",
     fecha: "2025-11-05",
     subcursos: [
       "Tipos y variables",
