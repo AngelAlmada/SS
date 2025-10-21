@@ -1,5 +1,12 @@
 <body>
-  <p>¡¡¡Aquí es donde se mostraran los cursos!!!!</p>
-  <app-listacursos [cursos]="cursos"></app-listacursos>
+  <app-componenteprincipal
+    icono="images/ia.png"
+    titulo="Curso de Microsoft Excel"
+    contenido="Domina las hojas de cálculo, fórmulas, tablas dinámicas y gráficos."
+    fechaCurso="Inicia el 5 de Noviembre, 2025"
+  >
+  </app-componenteprincipal>
   <app-identidad></app-identidad>
+
+  <app-listacursos [cursos]="cursos"></app-listacursos>
 </body>

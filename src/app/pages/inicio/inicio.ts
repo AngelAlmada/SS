@@ -2,6 +2,7 @@ import { Listacursos } from '../../components/listacursos/listacursos';
 import { cursos } from './../../../data/data';
 import { Identidad } from '../../components/identidad/identidad';
 import { Component } from '@angular/core';
+import { Componenteprincipal } from "../../components/componenteprincipal/componenteprincipal";
 
 interface Curso {
   titulo: string;
@@ -13,7 +14,7 @@ interface Curso {
 
 @Component({
   selector: 'app-inicio',
-  imports: [Listacursos, Identidad],
+  imports: [Listacursos, Identidad, Componenteprincipal],
   templateUrl: './inicio.html',
   styleUrl: './inicio.css',
 })
