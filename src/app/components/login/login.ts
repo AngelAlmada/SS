@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrl: './login.css'
 })
 export class Login {
-  constructor(private firebaseService: FirebaseService, private router: Router) {}
+  constructor(private firebaseService: FirebaseService, private router: Router) { }
 
 
   email = signal<string>('');
