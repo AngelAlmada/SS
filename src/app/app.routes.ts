@@ -8,6 +8,7 @@ import { CuadriculaCursos } from './components/cuadricula-cursos/cuadricula-curs
 import { Inicio } from './pages/inicio/inicio';
 import { Listacursos } from './components/listacursos/listacursos';
 import { Registro } from './components/registro/registro';
+import { DetallesCursos } from './pages/detalles-cursos/detalles-cursos';
 
 export const routes: Routes = [
   {
@@ -41,5 +42,9 @@ export const routes: Routes = [
   {
     path: 'registro',
     component: Registro,
+  },
+  {
+    path: 'registro/:titulo',
+    component: DetallesCursos,
   },
 ];

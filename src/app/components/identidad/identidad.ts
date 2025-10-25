@@ -11,12 +11,14 @@ import { Router } from '@angular/router';
 })
 export class Identidad {
   user: User | null = null;
+  photoURL: string | null = null;
 
   constructor(private auth: Auth, private router: Router, private firebaseService: FirebaseService) {}
 
   ngOnInit() {
     onAuthStateChanged(this.auth, (user) => {
       this.user = user;
+      this.photoURL = user?.photoURL || null;
       console.log('Usuario actual:', user);
     });
   }
@@ -40,5 +42,7 @@ export class Identidad {
       this.router.navigate(['/login']); // Redirige al login si no está autenticado
     }
   }
+
+
 
 }
