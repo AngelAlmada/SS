@@ -1,12 +1,11 @@
 <body>
   @for (curso of cursos; track curso) {
-    <li>
-      <img [src]="curso.imagenPath" [alt]="curso.titulo">
-      <div class="descripcion">
+  <li>
+    <img [src]="curso.imagenPath" [alt]="curso.titulo" />
+    <div class="descripcion">
       <h2>{{ curso.titulo }}</h2>
-      <p><strong>Fecha de inicio:</strong> {{ curso.fecha }}</p>
-      </div>
-      <button>Inscribirse</button>
-    </li>
+    </div>
+    <button>Inscribirse</button>
+  </li>
   }
 </body>
