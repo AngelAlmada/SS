@@ -13,6 +13,11 @@ import {
   collection,
   Firestore,
   getDocs,
+  query,
+  where,
+  doc,        
+  setDoc,      
+  getDoc, 
 } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { updateProfile } from 'firebase/auth';
@@ -31,13 +36,65 @@ export class FirebaseService {
     private router: Router
   ) {}
 
+async getUserProfile(uid: string): Promise<any | null> {
+  // 1. Apunta a la colección 'users'
+  const colRef = collection(this.firestore, 'users');
+
+  // 2. Crea la consulta para buscar el documento donde el campo 'uid' coincida
+  const q = query(colRef, where('uid', '==', uid));
+
+  try {
+    // 3. Ejecuta la consulta
+    const querySnapshot = await getDocs(q);
+
+    // 4. Comprueba si se encontraron resultados
+    if (!querySnapshot.empty) {
+      // 5. Devuelve los datos del primer documento encontrado
+      return querySnapshot.docs[0].data();
+    } else {
+      console.warn('No se encontró un perfil para el uid:', uid);
+      return null;
+    }
+  } catch (error) {
+    console.error('Error al obtener el perfil:', error);
+    return null;
+  }
+}
+
+// En src/app/services/firebase.service.ts
+
   async loginGoogle() {
     const provider = new GoogleAuthProvider();
     try {
       const result = await signInWithPopup(this.auth, provider);
       const user = result.user;
+
+      // --- INICIO DE LA LÓGICA DE FOTO EN ALTA RESOLUCIÓN ---
+      
+      let highResPhotoURL = user.photoURL; // Empezamos con la URL por defecto
+
+      if (user.photoURL && user.photoURL.includes('googleusercontent.com')) {
+        // 1. Si es una URL de Google, reemplazamos el tamaño
+        // Cambia '=s96-c' (tamaño 96px) por '=s400-c' (tamaño 400px)
+        highResPhotoURL = user.photoURL.replace('=s96-c', '=s400-c');
+      }
+
+      const userDocRef = doc(this.firestore, `users/${user.uid}`);
+      
+      const profileData = {
+        uid: user.uid,
+        email: user.email,
+        nombre: user.displayName,
+        fotoURL: highResPhotoURL // 2. Guardamos la URL de alta resolución
+      };
+
+      await setDoc(userDocRef, profileData, { merge: true });
+      
+      // --- FIN DE LA LÓGICA DE FOTO ---
+
       this.notyf.success(`Bienvenido ${user.displayName || 'Usuario'}`);
       this.router.navigate(['/']);
+
     } catch (error: any) {
       this.notyf.error(error.message || 'Error al iniciar sesión con Google');
     }
@@ -65,7 +122,7 @@ export class FirebaseService {
     email: string,
     password: string,
     nombre: string = '',
-    date: string = '' // recibimos como string del input type="date"
+    date: string = '' 
   ) {
     try {
       const result = await createUserWithEmailAndPassword(

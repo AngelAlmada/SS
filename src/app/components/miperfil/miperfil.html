@@ -1,0 +1,47 @@
+@if (isLoading) {
+  <p>Cargando perfil...</p>
+}
+
+@if (!isLoading && userProfile) {
+  <article class="curso-card perfil-card">
+    
+    <div class="curso-icono-container perfil-icono-container">
+      
+  @if (userProfile['fotoURL']) {
+    <img [src]="userProfile['fotoURL']" alt="Foto de {{ userProfile['nombre'] }}" class="perfil-foto">
+  } @else {
+    <i class="curso-icono fa-solid fa-user"></i>
+  }
+  
+</div>
+  
+    <div class="curso-info-container">
+      <div class="curso-contenido">
+        
+        <h3 class="curso-titulo">{{ userProfile['nombre'] }}</h3>
+        
+        <div class="curso-fecha">
+          <i class="fa-solid fa-envelope"></i>
+          <span>{{ userProfile['email'] }}</span>
+        </div>
+        
+      </div>
+
+      <div class="curso-accion">
+        <button class="curso-boton" (click)="logout()">
+          Cerrar sesión
+        </button>
+      </div>
+    </div>
+  </article>
+}
+
+@if (!isLoading && !userProfile) {
+  <p style="color: red; font-weight: bold; text-align: center;">
+    Error: No se pudo cargar el perfil de usuario.
+  </p>
+  <p style="text-align: center;">
+     Por favor, cierra sesión e intenta iniciar sesión de nuevo.
+  </p>
+  <button class="curso-boton" (click)="logout()">Cerrar sesión</button>
+}
