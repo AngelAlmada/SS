@@ -12,7 +12,7 @@ interface NavItem {
 @Component({
   selector: 'app-navbar',
   // 2. AÑÁDELOS a los imports
-  imports: [CommonModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterLink],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })

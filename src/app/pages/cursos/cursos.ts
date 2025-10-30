@@ -1,19 +1,25 @@
 import { Component } from '@angular/core';
 import { ObtenerDatos } from '../../services/obtener-datos/obtener-datos';
 import { Curso } from '../../../interfaces/data.interfas';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-cursos',
-  imports: [],
+  imports: [RouterModule, CommonModule],
   templateUrl: './cursos.html',
   styleUrl: './cursos.css'
 })
 export class Cursos {
+  cursos: Curso[] = [];
+
   constructor(private obtenerDatosService: ObtenerDatos) {}
 
   ngOnInit() {
-    const cursos: Curso[] = this.obtenerDatosService.obtenerDatos();
+    // Carga de cursos desde el servicio
+    this.cursos = this.obtenerDatosService.obtenerDatos();
 
-    const cursoAI = cursos.find(curso => curso.titulo === 'Introducción a las IAs');
-    console.log(cursoAI);
+    // Ejemplo de verificación en consola
+    console.log('Cursos cargados:', this.cursos);
   }
 }
