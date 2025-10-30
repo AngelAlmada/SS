@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+// 1. IMPORTA CommonModule y RouterLinkActive
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 interface NavItem {
   label: string;
@@ -9,7 +11,8 @@ interface NavItem {
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink],
+  // 2. AÑÁDELOS a los imports
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
@@ -21,7 +24,8 @@ export class NavbarComponent {
     {
       label: 'Cursos', iconPath: 'iconsnavbar/curso.svg', route: '/cursos'
     },{
-      label: 'Mi Perfil', iconPath: 'iconsnavbar/person.svg', route: '/usuario '
+      // 3. CORRIGE la ruta para que coincida con app.routes.ts
+      label: 'Mi Perfil', iconPath: 'iconsnavbar/person.svg', route: '/mi-perfil'
     },
   ]
 }

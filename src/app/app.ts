@@ -1,6 +1,8 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./components/navbar.component/navbar.component";
+import { Identidad } from './components/identidad/identidad';
+
 
 @Component({
   selector: 'app-root',
@@ -9,5 +11,5 @@ import { NavbarComponent } from "./components/navbar.component/navbar.component"
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('SS');
+  protected readonly title = signal('SS');
 }
