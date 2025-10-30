@@ -6,7 +6,7 @@ import { cursos } from '../../../data/data';
   providedIn: 'root'
 })
 export class ObtenerDatos {
-  
+
 
   constructor() {}
 

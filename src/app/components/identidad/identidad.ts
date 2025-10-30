@@ -42,7 +42,4 @@ export class Identidad {
       this.router.navigate(['/login']); // Redirige al login si no está autenticado
     }
   }
-
-
-
 }

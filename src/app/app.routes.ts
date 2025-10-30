@@ -44,7 +44,7 @@ export const routes: Routes = [
     component: Registro,
   },
   {
-    path: 'registro/:titulo',
+    path: 'registro/:titulo ',
     component: DetallesCursos,
   },
 ];
