@@ -2,5 +2,14 @@
   [icono]="curso?.imagenPath"
   [titulo]="curso?.titulo"
   [contenido]="curso?.descripcion"
->
-</app-componenteprincipal>
+></app-componenteprincipal>
+
+<!-- Mostrar solo si hay curso -->
+<div *ngIf="curso">
+  <app-horarios
+  [fechas]="curso?.fecha || []"
+  [cursoId]="curso?.titulo || ''"
+  (fechaSeleccionada)="onFechaSeleccionada($event)"
+></app-horarios>
+
+</div>

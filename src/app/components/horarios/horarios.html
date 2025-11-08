@@ -1,0 +1,71 @@
+<div class="horarios-container">
+  <div class="header">
+    <h3 class="title">Selecciona un horario disponible</h3>
+    <div class="subtitle">Elige la fecha que mejor se adapte a tu agenda</div>
+  </div>
+
+  <div class="fechas-section" *ngIf="!registroExistente">
+    <ul class="lista-fechas">
+      <li
+        *ngFor="let fecha of fechas"
+        [class.selected]="selectedDate === fecha"
+        (click)="seleccionarFecha(fecha)"
+        class="fecha-item"
+      >
+        <div class="fecha-content">
+          <span class="fecha-dia">{{ fecha | date : "EEEE" : "" : "es" }}</span>
+          <span class="fecha-fecha">{{ fecha | date : "d" : "" : "es" }}</span>
+          <span class="fecha-mes">{{ fecha | date : "MMMM" : "" : "es" }}</span>
+          <span class="fecha-ano">{{ fecha | date : "y" : "" : "es" }}</span>
+        </div>
+        <div class="fecha-indicator">
+          <div class="check-icon">✓</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="fechas-section" *ngIf="registroExistente">
+    <ul class="lista-fechas">
+      <li class="fecha-item selected">
+        <div class="fecha-content">
+          <span class="fecha-dia">{{
+            registroExistente?.fechaCurso | date : "EEEE" : "" : "es"
+          }}</span>
+          <span class="fecha-fecha">{{
+            registroExistente?.fechaCurso | date : "d" : "" : "es"
+          }}</span>
+          <span class="fecha-mes">{{
+            registroExistente?.fechaCurso | date : "MMMM" : "" : "es"
+          }}</span>
+          <span class="fecha-ano">{{
+            registroExistente?.fechaCurso | date : "y" : "" : "es"
+          }}</span>
+        </div>
+
+        <div class="fecha-indicator">
+          <div class="check-icon">✓</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <button
+    *ngIf="!registroExistente"
+    (click)="inscribirse()"
+    [disabled]="!selectedDate"
+    class="btn-inscribirse"
+  >
+    <span class="btn-text">Inscribirse ahora</span>
+    <span class="btn-icon">→</span>
+  </button>
+
+  <button
+    *ngIf="registroExistente"
+    (click)="consultarRegistro()"
+    class="btn-inscribirse"
+  >
+    <span class="btn-text">Ver mi registro</span>
+    <span class="btn-icon">→</span>
+  </button>
+</div>

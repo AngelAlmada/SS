@@ -1,16 +1,16 @@
-<body>
-  @for (curso of cursos; track curso) {
-    <li>
-      <img [src]="curso.imagenPath" [alt]="curso.titulo" />
-      <div class="descripcion">
-        <h2>{{ curso.titulo }}</h2>
-      </div>
+<div class="lista-cursos">
+  <ul>
+    @for (curso of cursos; track curso) {
+      <li>
+        <img [src]="curso.imagenPath" [alt]="curso.titulo" />
+        <div class="descripcion">
+          <h2>{{ curso.titulo }}</h2>
+        </div>
 
-      <button
-        [routerLink]="['/registrocurso', curso.titulo]"
-      >
-        Inscribirse
-      </button>
-    </li>
-  }
-</body>
+        <button [routerLink]="['/registrocurso', curso.titulo]">
+          Inscribirse
+        </button>
+      </li>
+    }
+  </ul>
+</div>

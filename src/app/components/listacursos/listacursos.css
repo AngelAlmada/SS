@@ -1,70 +1,80 @@
-li {
+/* 📋 Contenedor general */
+.lista-cursos {
   width: 100%;
-  /* ocupa todo el ancho del contenedor */
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  overflow-y: auto; /* permite scroll interno si hay muchos cursos */
+}
+
+/* Quita el estilo por defecto de ul */
+.lista-cursos ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 🎯 Cada elemento del curso */
+.lista-cursos li {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  /* horizontal */
   align-items: center;
-  /* centra verticalmente */
   justify-content: space-between;
-  /* espacio entre elementos */
   margin-top: 1rem;
-  background-color: #FEFEFF;
+  background-color: #fefeff;
   padding: 1rem;
-  /* espacio interno */
   box-sizing: border-box;
-  /* incluye padding en el ancho */
   border-radius: 8px;
-  /* opcional: bordes redondeados */
   gap: 1rem;
-  /* espacio entre elementos */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-img {
-  width: 50px;
+/* 💫 Animación al pasar el mouse */
+.lista-cursos li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* 🖼️ Imagen del curso */
+.lista-cursos img {
+  width: 60px;
   height: auto;
   flex-shrink: 0;
-  /* no se encoge */
+  border-radius: 8px;
 }
 
-.descripcion {
+/* 📝 Descripción del curso */
+.lista-cursos .descripcion {
   flex: 1;
-  /* ocupa el espacio restante */
-  color: #555;
+  color: #333;
+  font-size: 0.9rem;
+  line-height: 1.2;
 }
 
-button {
-  background-color: #0597F2;
+.lista-cursos li h2 {
+  font-size: 1rem;
+  margin: 0;
+  color: #182940;
+  font-weight: 600;
+}
+
+/* 🔘 Botón de acción */
+.lista-cursos button {
+  background-color: #0597f2;
   border: none;
   color: white;
-  padding: 10px 24px;
+  padding: 10px 20px;
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
   border-radius: 12px;
   flex-shrink: 0;
-  /* no se encoge */
+  transition: background-color 0.2s ease;
 }
 
-.descripcion {
-  flex: 1;
-  color: #555;
-  font-size: 0.8rem;
-  /* tamaño más pequeño */
-  line-height: 1.2;
-  /* opcional: ajusta la altura de línea */
-}
-
-li h2 {
-  font-size: 0.9rem;
-  /* título más pequeño */
-  margin: 0;
-  /* quitar márgenes extra */
-}
-
-li p {
-  font-size: 0.75rem;
-  /* párrafo más pequeño */
-  margin: 0;
-  color: #555;
+.lista-cursos button:hover {
+  background-color: #047dcc;
 }

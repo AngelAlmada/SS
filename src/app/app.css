@@ -1,0 +1,79 @@
+/* 🌐 Contenedor principal */
+.layout-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden; /* ❌ Sin scroll en todo el layout */
+  background: url('/assets/background.jpg') no-repeat center center fixed;
+  background-size: cover; /* ✅ Fondo fijo */
+}
+
+/* ============================ */
+/* 🧭 Navbar lateral en escritorio */
+/* ============================ */
+@media (min-width: 769px) {
+  app-navbar {
+    width: 250px;
+    flex-shrink: 0;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    background-color: #182940;
+    color: white;
+    z-index: 10;
+  }
+}
+
+/* ============================ */
+/* 📄 Contenido principal */
+/* ============================ */
+.layout-content {
+  flex: 1;
+  overflow-y: auto; /* ✅ Scroll solo en el contenido */
+  height: 100vh;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+  /* Fondo semitransparente opcional sobre el fondo fijo */
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+/* Evita que el contenido quede cortado */
+.layout-content > * {
+  min-height: calc(100vh - 3rem); /* Asegura que el componente ocupe todo el alto visible */
+}
+
+/* ========================== */
+/* 📱 Navbar inferior en móvil */
+/* ========================== */
+@media (max-width: 768px) {
+  .layout-container {
+    flex-direction: column;
+    background-attachment: fixed; /* Mantiene el fondo fijo en móviles */
+  }
+
+  app-navbar {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #182940;
+  }
+
+  .layout-content {
+    flex: 1;
+    height: 100%;
+    padding: 1rem;
+    overflow-y: auto;
+    padding-bottom: 80px; /* ✅ Margen inferior para no tapar el contenido con la navbar */
+  }
+
+  .layout-content > * {
+    min-height: calc(100vh - 80px);
+  }
+}

@@ -1,12 +1,11 @@
-<body>
+<div class="page-container">
   <app-componenteprincipal
-    icono="images/ia.png"
-    titulo="Curso de Microsoft Excel"
-    contenido="Domina las hojas de cálculo, fórmulas, tablas dinámicas y gráficos."
-    fechaCurso="Inicia el 5 de Noviembre, 2025"
-  >
-  </app-componenteprincipal>
-  <app-identidad></app-identidad>
+  *ngIf="current() as curso"
+  [icono]="curso.imagenPath"
+  [titulo]="curso.titulo"
+  [contenido]="curso.descripcion"
+  [fechaCurso]="'Inicia el ' + (curso.fecha[0] | date:'d \'de\' MMMM, y')"
+></app-componenteprincipal>
 
   <app-listacursos [cursos]="cursos"></app-listacursos>
-</body>
+</div>
